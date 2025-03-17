@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Customer Churn Prediction</h2>
+    <form action="/predict" method="POST">
+        Age: <input type="text" name="age"><br>
+        Balance: <input type="text" name="balance"><br>
+        Number of Products: <input type="text" name="num_products"><br>
+        Has Credit Card (1 for Yes, 0 for No): <input type="text" name="has_cr_card"><br>
+        Is Active Member (1 for Yes, 0 for No): <input type="text" name="is_active_member"><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
